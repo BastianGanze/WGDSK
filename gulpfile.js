@@ -13,4 +13,8 @@ gulp.task('transpile', function() {
         .pipe(gulp.dest(paths.build));
 });
 
+gulp.task('watch', ['transpile'], function() {
+    gulp.watch(paths.src+'**/*.ts', ['transpile']);
+});
+
 gulp.task('default', ['transpile']);
