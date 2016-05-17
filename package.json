@@ -1,0 +1,13 @@
+{
+  "name": "WGDSK",
+  "version": "0.0.1",
+  "description": "",
+  "main": "game.js",
+  "author": "Your Name Here",
+  "license": "MIT",
+  "repository": "https://github.com/BastianGanze/WGDSK",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^2.13.4"
+  }
+}
