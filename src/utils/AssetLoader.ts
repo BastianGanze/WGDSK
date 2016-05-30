@@ -27,7 +27,7 @@ class AssetLoader
         log.trace("Loading content.");
         createjs.Sound.alternateExtensions = ["mp3"];
         this.assetQueue.installPlugin(() => {return createjs.Sound});
-        this.assetQueue.on("complete", this.loadComplete);
+        this.assetQueue.on("complete", this.loadComplete.bind(this));
         this.assetQueue.on("error", this.loadError);
         this.assetQueue.loadManifest(assets);
     }
