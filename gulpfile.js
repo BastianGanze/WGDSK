@@ -10,7 +10,7 @@ var gulp = require('gulp'),
     version = "0.0.1";
 
 var srcCodeBundler = browserify({debug:true}).add(paths.src+mainFile).plugin(tsify),
-    watchifyBundler = watchify(browserify().add(paths.src+mainFile).plugin(tsify));
+    watchifyBundler = watchify(browserify({debug:true}).add(paths.src+mainFile).plugin(tsify));
 
 function transpile(bundler){
     return function()
