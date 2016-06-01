@@ -1,5 +1,6 @@
 import Game from "./Game";
 import AssetLoader from "./utils/AssetLoader";
+import GameRenderer from "./utils/Renderer";
 
 document.addEventListener("DOMContentLoaded", function(event) {
     AssetLoader.onContentLoaded(function()
@@ -7,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var game : Game = new Game(),
             lastTime : number = 0,
             delta : number;
+
+        GameRenderer.addToMainContainer(new PIXI.Sprite());
 
         function mainLoop(time : number) {
 

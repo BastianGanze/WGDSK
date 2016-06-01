@@ -10,9 +10,12 @@ export enum LogLevel{
 }
 
 export class Config{
-    static APPLICATION_NAME: string = "";
-    static DEBUG : boolean = true;
-    static LOG_LEVEL : LogLevel = LogLevel.DEBUG;
-    static LOG_TO_SERVER: boolean = false;
-    static LOG_TO_CONSOLE: boolean = true;
+    public static APPLICATION_NAME: string = "";
+    public static DEBUG : boolean = true;
+    public static LOG_LEVEL : LogLevel = LogLevel.DEBUG;
+    public static LOG_TO_SERVER: boolean = false;
+    public static LOG_TO_CONSOLE: boolean = true;
+    public static STAGE_WIDTH: number = 1280;
+    public static STAGE_HEIGHT: number = 720;
+    public static BG_COLOR: number = 0x6495ED;
 }

@@ -2,7 +2,6 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     tsify = require('tsify'),
     buffer = require('vinyl-buffer'),
-    sourcemaps = require('gulp-sourcemaps');
     source = require('vinyl-source-stream'),
     watchify = require('watchify'),
     paths = {src: "src/", build:"build/", tmp:"tmp/"},
