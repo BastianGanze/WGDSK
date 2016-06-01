@@ -4,7 +4,7 @@ import {Config} from "../Config";
 
 var log = Logger("GameRenderer");
 
-class GameRenderer
+export default class GameRenderer
 {
     private gameRenderer : PIXI.SystemRenderer;
     private mainContainer : PIXI.Container;
@@ -30,5 +30,3 @@ class GameRenderer
         this.mainContainer.removeChild(sprite);
     }
 }
-
-export default new GameRenderer();
