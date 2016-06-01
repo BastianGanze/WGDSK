@@ -1,7 +1,8 @@
+/// <reference path="../libssrc/jquery-2.1.4.d.ts" />
 import Game from "./Game";
 import AssetLoader from "./utils/AssetLoader";
 
-document.addEventListener("DOMContentLoaded", function(event) {
+$(document).ready(function(event) {
     AssetLoader.onContentLoaded(function()
     {
         var game : Game = new Game(),
