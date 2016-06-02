@@ -80,6 +80,11 @@ export module Input
             return this.yAxisCallback();
         }
 
+        /**
+         * Will return true if Button is being pressed at the time of this function call.
+         * @param button
+         * @returns {boolean}
+         */
         public isButtonPressed(button : Buttons) : boolean
         {
             return this.keyPressedMap[this.keyBindings[button]] === 1;
