@@ -1,6 +1,7 @@
 import GameRenderer from "./utils/Renderer";
 import AssetLoader from "./utils/AssetLoader";
 import {Logger} from "./utils/Logger";
+import {Input} from "./utils/Input";
 
 var log = Logger("Game");
 
