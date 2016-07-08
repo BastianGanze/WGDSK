@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     source = require('vinyl-source-stream'),
     watchify = require('watchify'),
     paths = {src: "src/", build:"build/", tmp:"tmp/"},
-    mainFile = "start.ts",
+    mainFile = "Start.ts",
     version = "0.0.1";
 
 var srcCodeBundler = browserify({debug:true}).add(paths.src+mainFile).plugin(tsify),

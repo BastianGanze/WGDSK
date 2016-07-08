@@ -16,6 +16,7 @@ $(document).ready(function(event) {
             game.update(delta);
             game.render();
             lastTime = time;
+
         }
         window.requestAnimationFrame( mainLoop );
     });
