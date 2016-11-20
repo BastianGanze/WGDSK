@@ -7,9 +7,9 @@
   "license": "MIT",
   "repository": "https://github.com/BastianGanze/WGDSK",
   "devDependencies": {
-    "browserify": "^13.0.1",
+    "browserify": "^13.1.1",
     "gulp": "^3.9.1",
-    "tsify": "^0.16.0",
+    "tsify": "^2.0.3",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
