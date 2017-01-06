@@ -19,6 +19,16 @@ export default class Game
 
     }
 
+    public updatePhysics(delta : number) : void
+    {
+
+    }
+
+    public updateCamera(delta : number) : void
+    {
+
+    }
+
     public render() : void
     {
 
