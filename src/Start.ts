@@ -8,19 +8,19 @@ $(document).ready(function(event) {
         var game : Game = new Game(),
             lastTime : number = 0,
             timeStep : number = 60 / 1000,
-            delta : number;
+            timeToUpdate : number = 0;
 
         function mainLoop(time : number) {
 
             window.requestAnimationFrame( mainLoop );
-            delta = delta + Math.min(1, (time - lastTime)/1000);
-            while(delta > timeStep)
+            timeToUpdate = timeToUpdate + Math.min(1, (time - lastTime)/1000);
+            while(timeToUpdate > timeStep)
             {
-                delta = delta - timeStep;
+                timeToUpdate = timeToUpdate - timeStep;
                 game.update(timeStep);
             }
-            game.updateCamera(delta);
-            game.render(delta);
+            game.updateCamera(timeToUpdate);
+            game.render(timeToUpdate);
             lastTime = time;
         }
         window.requestAnimationFrame( mainLoop );
