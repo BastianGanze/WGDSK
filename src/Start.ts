@@ -7,16 +7,21 @@ $(document).ready(function(event) {
     {
         var game : Game = new Game(),
             lastTime : number = 0,
+            timeStep : number = 60 / 1000,
             delta : number;
 
         function mainLoop(time : number) {
 
             window.requestAnimationFrame( mainLoop );
-            delta = time - lastTime;
-            game.update(delta);
-            game.render();
+            delta = delta + Math.min(1, (time - lastTime)/1000);
+            while(delta > timeStep)
+            {
+                delta = delta - timeStep;
+                game.update(timeStep);
+            }
+            game.updateCamera(delta);
+            game.render(delta);
             lastTime = time;
-
         }
         window.requestAnimationFrame( mainLoop );
     });
