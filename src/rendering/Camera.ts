@@ -1,29 +1,29 @@
 import {Logger} from "../utils/Logger";
 import Vector2D from "../utils/Vector2D";
 import {Config} from "../Config";
-import IReferenceObject from "./IReferenceObject";
+import IPoint from "./IPoint";
 
 var log = Logger("Camera");
 
 
 class Camera
 {
-    private _position : IReferenceObject;
+    private _position : IPoint;
 
 
-    constructor(position : IReferenceObject) {
+    constructor(position : IPoint) {
         this._position = position;
     }
 
-    public getPosition() : IReferenceObject {
+    public getPosition() : IPoint {
         return this._position;
     }
 
-    public setPosition(position : IReferenceObject) : void {
+    public setPosition(position : IPoint) : void {
         this._position = position;
     }
 
-    public getViewPortCoordinates(mapCoordinates : IReferenceObject)
+    public getViewPortCoordinates(mapCoordinates : IPoint)
     {
         var newPosition = Vector2D.subVec(mapCoordinates, this._position);
 

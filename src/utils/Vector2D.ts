@@ -1,8 +1,8 @@
 import {Logger} from "../utils/Logger";
-import IReferenceObject from "../rendering/IReferenceObject";
+import IPoint from "../rendering/IPoint";
 var log = Logger("Vector2D");
 
-export default class Vector2D implements IReferenceObject
+export default class Vector2D implements IPoint
 {
     public x : number;
     public y : number;
@@ -13,17 +13,17 @@ export default class Vector2D implements IReferenceObject
         this.y = y;
     }
 
-    public static addVec(v1: IReferenceObject, v2 : IReferenceObject)
+    public static addVec(v1: IPoint, v2 : IPoint)
     {
         return new Vector2D(v1.x + v2.x, v1.y + v2.y);
     }
 
-    public static subVec(v1: IReferenceObject, v2 : IReferenceObject)
+    public static subVec(v1: IPoint, v2 : IPoint)
     {
         return new Vector2D(v1.x - v2.x, v1.y - v2.y);
     }
 
-    public add(v : IReferenceObject) {
+    public add(v : IPoint) {
         this.x += v.x;
         this.y += v.y;
     }

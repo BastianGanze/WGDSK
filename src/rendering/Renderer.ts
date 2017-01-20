@@ -3,7 +3,6 @@ import {Logger} from "../utils/Logger";
 import {Config} from "../Config";
 import Layer from "./Layer";
 import RenderingObject from "./RenderingObject";
-import Utils from "../utils/Utils";
 
 var log = Logger("GameRenderer");
 
@@ -22,6 +21,7 @@ export default class GameRenderer
         document.body.appendChild(this.gameRenderer.view);
         this.mainContainer = new PIXI.Container();
         this.renderingObjects = [];
+        this.displayGroups = {};
         this.setupResizing();
         this.initializeLayer();
     }
@@ -61,9 +61,9 @@ export default class GameRenderer
     {
         for(var key in Layer)
         {
-            if(typeof key == "number")
+            var index = parseInt(key);
+            if(typeof index == "number")
             {
-                var index : number = <number>key;
                 this.displayGroups[index] = new PIXI.DisplayGroup(index);
             }
         }
@@ -80,19 +80,23 @@ export default class GameRenderer
     public removeRenderObject(renderingObject : RenderingObject)
     {
         log.trace("Removing render object.");
-        this.mainContainer.removeChild(renderingObject.displayObject);
-        this.renderingObjects = this.renderingObjects.splice(this.renderingObjects.indexOf(renderingObject), 1);
+        var indexOfRenderingObject = this.renderingObjects.indexOf(renderingObject);
+        if(indexOfRenderingObject > -1)
+        {
+            this.mainContainer.removeChild(renderingObject.displayObject);
+            this.renderingObjects = this.renderingObjects.splice(indexOfRenderingObject, 1);
+        }
+        else
+        {
+            log.warn("Tried to remove a renderingObject that was not added earlier.");
+        }
     }
 
     public updateRenderObjects(restDelta : number)
     {
-        for(var i = 0; this.renderingObjects.length; i++)
+        for(var i = 0; i < this.renderingObjects.length; i++)
         {
-            if(this.renderingObjects[i].pinToCamera == false)
-            {
-                //TODO: interpolate displayObject position with restDelta
-                Utils.setViewportPos(this.renderingObjects[i].displayObject, this.renderingObjects[i].referenceObject);
-            }
+            this.renderingObjects[i].update(restDelta);
         }
     }
 

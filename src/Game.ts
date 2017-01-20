@@ -4,6 +4,8 @@ import {Logger} from "./utils/Logger";
 import {Input} from "./utils/Input";
 import Camera from "./rendering/Camera";
 import Vector2D from "./utils/Vector2D";
+import RenderingObject from "./rendering/RenderingObject";
+import Layer from "./rendering/Layer";
 
 var log = Logger("Game");
 
