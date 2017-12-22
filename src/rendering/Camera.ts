@@ -3,7 +3,7 @@ import Vector2D from "../utils/Vector2D";
 import {Config} from "../Config";
 import IPoint from "./IPoint";
 
-var log = Logger("Camera");
+const log = Logger("Camera");
 
 
 class Camera
@@ -25,7 +25,7 @@ class Camera
 
     public getViewPortCoordinates(mapCoordinates : IPoint)
     {
-        var newPosition = Vector2D.subVec(mapCoordinates, this._position);
+        const newPosition = Vector2D.subVec(mapCoordinates, this._position);
 
         newPosition.add(new Vector2D(Config.STAGE_WIDTH/2, Config.STAGE_HEIGHT/2));
 

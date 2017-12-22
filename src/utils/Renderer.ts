@@ -2,7 +2,7 @@
 import {Logger} from "../utils/Logger";
 import {Config} from "../Config";
 
-var log = Logger("GameRenderer");
+const log = Logger("GameRenderer");
 
 export default class GameRenderer
 {

@@ -7,14 +7,14 @@ import {Config} from "../Config";
 
 export function Logger(loggerName : string) : JSNLogLogger
 {
-    var consoleAppender : JSNLogConsoleAppender = JL.createConsoleAppender("ConsoleAppender");
-    var serverAppender : JSNLogConsoleAppender = JL.createAjaxAppender("ConsoleAppender");
-    var appenders : JSNLogAppender[] = [];
+    const consoleAppender : JSNLogConsoleAppender = JL.createConsoleAppender("ConsoleAppender");
+    const serverAppender : JSNLogConsoleAppender = JL.createAjaxAppender("ConsoleAppender");
+    const appenders : JSNLogAppender[] = [];
     if(Config.LOG_TO_CONSOLE) appenders.push(consoleAppender);
     if(Config.LOG_TO_SERVER) appenders.push(serverAppender);
-    var logger : JSNLogLogger = JL(loggerName).setOptions({"appenders": appenders, level: Config.LOG_LEVEL});
+    const logger : JSNLogLogger = JL(loggerName).setOptions({"appenders": appenders, level: Config.LOG_LEVEL});
 
     return logger;
 }
 
-export var Log : JSNLogLogger = Logger(Config.APPLICATION_NAME);
+export const Log : JSNLogLogger = Logger(Config.APPLICATION_NAME);

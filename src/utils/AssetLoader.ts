@@ -3,7 +3,7 @@
 /// <reference path="../../libssrc/soundjs.d.ts" />
 import {Logger} from "../utils/Logger";
 
-var assets : any = [
+const assets : any = [
         {src:"assets/img/test.png", id:"TestImage"},
         {src:"assets/audio/test.wav", id:"TestSound"},
     ], log = Logger("AssetLoader");
@@ -50,7 +50,7 @@ class AssetLoader
 
     private executeCallbacks(){
         log.trace("Executing onLoad callbacks.");
-        for(var i = 0; i < this.loadedCallbacks.length; i++)
+        for(let i = 0; i < this.loadedCallbacks.length; i++)
         {
             this.loadedCallbacks[i]();
         }

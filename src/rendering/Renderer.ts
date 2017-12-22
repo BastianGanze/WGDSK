@@ -4,7 +4,7 @@ import {Config} from "../Config";
 import Layer from "./Layer";
 import RenderingObject from "./RenderingObject";
 
-var log = Logger("GameRenderer");
+const log = Logger("GameRenderer");
 
 export default class GameRenderer
 {
@@ -28,14 +28,14 @@ export default class GameRenderer
 
     protected setupResizing()
     {
-        var $window = $(window), canvas = $(this.gameRenderer.view);
+        const $window = $(window), canvas = $(this.gameRenderer.view);
 
         function viewPortResize()
         {
-            var width = $window.width(),
-                height = $window.height(),
-                stageRatio = Config.STAGE_WIDTH/Config.STAGE_HEIGHT,
-                ratio = width/height;
+            const width = $window.width();
+            const height = $window.height();
+            const stageRatio = Config.STAGE_WIDTH/Config.STAGE_HEIGHT;
+            const ratio = width/height;
 
             if(ratio > stageRatio)
             {
@@ -59,9 +59,9 @@ export default class GameRenderer
 
     public initializeLayer() : void
     {
-        for(var key in Layer)
+        for(let key in Layer)
         {
-            var index = parseInt(key);
+            const index = parseInt(key);
             if(typeof index == "number")
             {
                 this.displayGroups[index] = new PIXI.DisplayGroup(index);

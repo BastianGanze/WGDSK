@@ -5,10 +5,10 @@ import AssetLoader from "./utils/AssetLoader";
 $(document).ready(function(event) {
     AssetLoader.onContentLoaded(function()
     {
-        var game : Game = new Game(),
-            lastTime : number = 0,
-            timeStep : number = 60 / 1000,
-            timeToUpdate : number = 0;
+        const game : Game = new Game();
+        const timeStep : number = 60 / 1000;
+        let lastTime : number = 0;
+        let timeToUpdate : number = 0;
 
         function mainLoop(time : number) {
 

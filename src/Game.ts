@@ -7,7 +7,7 @@ import Vector2D from "./utils/Vector2D";
 import RenderingObject from "./rendering/RenderingObject";
 import Layer from "./rendering/Layer";
 
-var log = Logger("Game");
+const log = Logger("Game");
 
 export default class Game
 {

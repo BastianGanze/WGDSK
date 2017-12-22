@@ -4,7 +4,7 @@ import IRenderObjectReference from "./IRenderObjectReference";
 import Utils from "../utils/Utils";
 import IPoint from "./IPoint";
 
-var log = Logger("GameRenderer");
+const log = Logger("GameRenderer");
 
 export default class RenderingObject
 {
@@ -24,9 +24,9 @@ export default class RenderingObject
 
     public update(restDelta : number) : void
     {
-        var position : IPoint = this.referenceObject.getPosition(),
-            movementVector : IPoint = this.referenceObject.getMovementVector(),
-            rotation : number = this.referenceObject.getRotation();
+        const position : IPoint = this.referenceObject.getPosition();
+        const movementVector : IPoint = this.referenceObject.getMovementVector();
+        const rotation : number = this.referenceObject.getRotation();
 
         if(this.pinToCamera == false)
         {

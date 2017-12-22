@@ -29,7 +29,7 @@ export module Input
 
         constructor()
         {
-            var $document : JQuery = $(document);
+            const $document : JQuery = $(document);
             $document.keydown(this.onKeyDown.bind(this));
             $document.keyup(this.onKeyUp.bind(this));
             this.keyBindings = {};

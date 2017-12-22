@@ -1,6 +1,6 @@
 import {Logger} from "../utils/Logger";
 import IPoint from "../rendering/IPoint";
-var log = Logger("Vector2D");
+const log = Logger("Vector2D");
 
 export default class Vector2D implements IPoint
 {
